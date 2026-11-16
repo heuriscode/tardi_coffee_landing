@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tardi Coffee — logo animation</title>
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/anim.css">
+<style>
+  html,body{height:100%;overflow:hidden}
+  .stage{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:5vmin;width:100%;height:100%;padding:4vmin}
+  .stage .tardi-anim{height:min(86vh,120vw);width:auto}
+  .stage .side{display:flex;flex-direction:column;gap:2.5vmin;width:min(46vh,44vw)}
+  .stage .hand{font-size:min(5.5vh,5vw);margin:0;text-align:center}
+  .stage .postcard{width:100%;border-radius:3vmin}
+  .stage .scene .cap{font-size:min(3vh,3vw)}
+  .noscenes .side .postcard{display:none}
+  .ufo{top:3%}
+  @media (orientation:portrait){
+    .stage{flex-direction:column;gap:2vh}
+    .stage .tardi-anim{height:52vh}
+    .stage .side{width:min(64vw,38vh);gap:1.6vh}
+    .stage .hand{font-size:min(3.4vh,6vw);white-space:nowrap}
+    .noscenes .stage .tardi-anim{height:70vh}
+  }
+</style>
+</head>
+<body>
+<div class="sky" aria-hidden="true">
+  <div class="stars"></div>
+  <span class="shoot" style="left:88%;top:6%;--d:9s;--o:-3s"></span>
+  <span class="shoot" style="left:62%;top:30%;--d:18s;--o:-11s"></span>
+  <span class="shoot" style="left:100%;top:52%;--d:27s;--o:-21s"></span>
+  <div class="ufo"><svg viewBox="0 0 100 110">
+    <polygon class="beam" points="38,42 62,42 86,110 14,110"/>
+    <g fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M33 31a17 15 0 0 1 34 0"/><ellipse cx="50" cy="35" rx="42" ry="10" fill="var(--bg)"/><path d="M40 45l-6 8M60 45l6 8"/>
+    </g>
+    <g class="lights"><circle cx="28" cy="36" r="3"/><circle cx="50" cy="39" r="3"/><circle cx="72" cy="36" r="3"/></g>
+  </svg></div>
+  <div class="rocket"><svg viewBox="0 0 40 90">
+    <path class="flame" d="M14 54q6 20 6 28q0-8 6-28z"/>
+    <g fill="var(--bg)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"><path d="M10 42l-8 14 9-3M30 42l8 14-9-3"/><path d="M20 4c11 11 13 28 10 50H10C7 32 9 15 20 4z"/><circle cx="20" cy="26" r="5"/></g>
+  </svg></div>
+  <img class="drifter" src="assets/logo/cup-mini-space.png" alt="">
+</div>
+<div class="stage">
+  <div class="tardi-anim" role="img" aria-label="Animated Tardi Coffee logo: espresso drips from a portafilter through a swirling wormhole and lands in a cup">
+      <img class="l fill" src="assets/logo/fill.png" alt="">
+      <img class="l space" src="assets/logo/space.png" alt="">
+      <img class="l saturn" src="assets/logo/saturn.png" alt="">
+      <img class="l moon" src="assets/logo/moon.png" alt="">
+      <img class="l word" src="assets/logo/word.png" alt="">
+      <img class="l porta" src="assets/logo/porta.png" alt="">
+      <img class="l drip" src="assets/logo/drip.png" alt="">
+      <img class="l worm" src="assets/logo/worm.png" alt="">
+      <img class="l rays" src="assets/logo/rays.png" alt="">
+      <img class="l cup" src="assets/logo/cup.png" alt="">
+      <svg class="fx" viewBox="0 0 500 680" aria-hidden="true">
+        <path class="ghost" d="M273.0 207.0 L274.0 222.0 L277.0 230.4 L284.6 230.8 L291.9 231.5 L298.9 232.5 L305.4 233.9 L311.4 235.5 L316.7 237.4 L321.2 239.5 L325.0 241.8 L328.0 244.3 L330.0 246.8 L331.2 249.4 L331.5 252.0 L330.8 254.6 L329.4 257.1 L327.0 259.6 L324.0 261.9 L320.2 264.0 L315.7 265.9 L310.7 267.6 L305.3 269.0 L299.5 270.2 L293.4 271.1 L287.2 271.7 L280.9 272.0 L274.6 272.1 L268.5 271.8 L262.7 271.3 L257.2 270.6 L252.1 269.6 L247.5 268.4 L243.5 267.0 L240.1 265.5 L237.3 263.8 L235.3 262.1 L234.0 260.3 L233.4 258.5 L233.5 256.6 L234.3 254.9 L235.8 253.2 L238.0 251.6 L240.7 250.2 L244.0 248.9 L247.8 247.8 L251.9 246.9 L256.4 246.2 L261.1 245.7 L266.0 245.5 L270.9 245.5 L275.9 245.7 L280.7 246.2 L285.4 246.8 L289.9 247.7 L294.0 248.8 L297.8 250.1 L301.2 251.5 L304.0 253.0 L306.4 254.7 L308.3 256.4 L309.6 258.2 L310.3 260.0 L310.5 261.9 L310.1 263.7 L309.2 265.4 L307.8 267.1 L305.9 268.7 L303.6 270.2 L300.9 271.6 L297.9 272.8 L294.6 273.9 L291.1 274.8 L287.5 275.6 L283.8 276.2 L280.1 276.6 L276.4 276.8 L272.9 276.9 L269.5 276.8 L266.3 276.6 L263.4 276.2 L260.8 275.7 L258.5 275.2 L256.6 274.5 L255.1 273.8 L254.0 273.0 L253.3 272.2 L253.0 271.5 L253.1 270.7 L253.6 269.9 L254.5 269.3 L255.7 268.6 L257.2 268.1 L259.0 267.7 L261.0 267.3 L263.3 267.1 L265.7 267.0 L268.2 267.0 L270.7 267.1 L273.3 267.4 L275.8 267.8 L278.3 268.3 L280.7 268.9 L282.9 269.6 L285.0 270.4 L286.8 271.3 L288.4 272.3 L289.8 273.3 L290.9 274.4 L291.7 275.5 L292.2 276.6 L292.5 277.8 L292.5 278.9 L292.2 280.0 L291.7 281.1 L291.0 282.1 L290.1 283.1 L289.0 284.1 L287.7 284.9 L286.3 285.7 L284.9 286.5 L283.3 287.1 L281.7 287.7 L280.2 288.2 L278.6 288.6 L277.1 289.0 L275.7 289.3 L274.4 289.5 L273.1 289.7 L272.0 289.8 L271.1 289.9 L270.3 290.0 L269.7 290.0 L269.2 290.1 L268.9 290.1 L268.8 290.1 L268.8 290.2 L268.9 290.2 L269.2 290.3 L269.6 290.4 L270.1 290.6 L270.7 290.8 L271.3 291.0 L272.0 291.3 L272.8 291.6 L273.6 292.0 L274.3 292.4 L275.1 292.8 L275.8 293.3 L276.5 293.8 L277.2 294.4 L277.8 294.9 L278.3 295.5 L278.8 296.1 L279.2 296.8 L279.5 297.4 L279.7 298.1 L279.9 298.7 L280.0 299.4 L280.1 300.1 L280.1 300.7 L280.1 301.4 L280.0 302.0 L278.0 312.0"/>
+        <path class="stream" pathLength="1000" d="M273.0 207.0 L274.0 222.0 L277.0 230.4 L284.6 230.8 L291.9 231.5 L298.9 232.5 L305.4 233.9 L311.4 235.5 L316.7 237.4 L321.2 239.5 L325.0 241.8 L328.0 244.3 L330.0 246.8 L331.2 249.4 L331.5 252.0 L330.8 254.6 L329.4 257.1 L327.0 259.6 L324.0 261.9 L320.2 264.0 L315.7 265.9 L310.7 267.6 L305.3 269.0 L299.5 270.2 L293.4 271.1 L287.2 271.7 L280.9 272.0 L274.6 272.1 L268.5 271.8 L262.7 271.3 L257.2 270.6 L252.1 269.6 L247.5 268.4 L243.5 267.0 L240.1 265.5 L237.3 263.8 L235.3 262.1 L234.0 260.3 L233.4 258.5 L233.5 256.6 L234.3 254.9 L235.8 253.2 L238.0 251.6 L240.7 250.2 L244.0 248.9 L247.8 247.8 L251.9 246.9 L256.4 246.2 L261.1 245.7 L266.0 245.5 L270.9 245.5 L275.9 245.7 L280.7 246.2 L285.4 246.8 L289.9 247.7 L294.0 248.8 L297.8 250.1 L301.2 251.5 L304.0 253.0 L306.4 254.7 L308.3 256.4 L309.6 258.2 L310.3 260.0 L310.5 261.9 L310.1 263.7 L309.2 265.4 L307.8 267.1 L305.9 268.7 L303.6 270.2 L300.9 271.6 L297.9 272.8 L294.6 273.9 L291.1 274.8 L287.5 275.6 L283.8 276.2 L280.1 276.6 L276.4 276.8 L272.9 276.9 L269.5 276.8 L266.3 276.6 L263.4 276.2 L260.8 275.7 L258.5 275.2 L256.6 274.5 L255.1 273.8 L254.0 273.0 L253.3 272.2 L253.0 271.5 L253.1 270.7 L253.6 269.9 L254.5 269.3 L255.7 268.6 L257.2 268.1 L259.0 267.7 L261.0 267.3 L263.3 267.1 L265.7 267.0 L268.2 267.0 L270.7 267.1 L273.3 267.4 L275.8 267.8 L278.3 268.3 L280.7 268.9 L282.9 269.6 L285.0 270.4 L286.8 271.3 L288.4 272.3 L289.8 273.3 L290.9 274.4 L291.7 275.5 L292.2 276.6 L292.5 277.8 L292.5 278.9 L292.2 280.0 L291.7 281.1 L291.0 282.1 L290.1 283.1 L289.0 284.1 L287.7 284.9 L286.3 285.7 L284.9 286.5 L283.3 287.1 L281.7 287.7 L280.2 288.2 L278.6 288.6 L277.1 289.0 L275.7 289.3 L274.4 289.5 L273.1 289.7 L272.0 289.8 L271.1 289.9 L270.3 290.0 L269.7 290.0 L269.2 290.1 L268.9 290.1 L268.8 290.1 L268.8 290.2 L268.9 290.2 L269.2 290.3 L269.6 290.4 L270.1 290.6 L270.7 290.8 L271.3 291.0 L272.0 291.3 L272.8 291.6 L273.6 292.0 L274.3 292.4 L275.1 292.8 L275.8 293.3 L276.5 293.8 L277.2 294.4 L277.8 294.9 L278.3 295.5 L278.8 296.1 L279.2 296.8 L279.5 297.4 L279.7 298.1 L279.9 298.7 L280.0 299.4 L280.1 300.1 L280.1 300.7 L280.1 301.4 L280.0 302.0 L278.0 312.0"/>
+        <path class="stream s2" pathLength="1000" d="M273.0 207.0 L274.0 222.0 L277.0 230.4 L284.6 230.8 L291.9 231.5 L298.9 232.5 L305.4 233.9 L311.4 235.5 L316.7 237.4 L321.2 239.5 L325.0 241.8 L328.0 244.3 L330.0 246.8 L331.2 249.4 L331.5 252.0 L330.8 254.6 L329.4 257.1 L327.0 259.6 L324.0 261.9 L320.2 264.0 L315.7 265.9 L310.7 267.6 L305.3 269.0 L299.5 270.2 L293.4 271.1 L287.2 271.7 L280.9 272.0 L274.6 272.1 L268.5 271.8 L262.7 271.3 L257.2 270.6 L252.1 269.6 L247.5 268.4 L243.5 267.0 L240.1 265.5 L237.3 263.8 L235.3 262.1 L234.0 260.3 L233.4 258.5 L233.5 256.6 L234.3 254.9 L235.8 253.2 L238.0 251.6 L240.7 250.2 L244.0 248.9 L247.8 247.8 L251.9 246.9 L256.4 246.2 L261.1 245.7 L266.0 245.5 L270.9 245.5 L275.9 245.7 L280.7 246.2 L285.4 246.8 L289.9 247.7 L294.0 248.8 L297.8 250.1 L301.2 251.5 L304.0 253.0 L306.4 254.7 L308.3 256.4 L309.6 258.2 L310.3 260.0 L310.5 261.9 L310.1 263.7 L309.2 265.4 L307.8 267.1 L305.9 268.7 L303.6 270.2 L300.9 271.6 L297.9 272.8 L294.6 273.9 L291.1 274.8 L287.5 275.6 L283.8 276.2 L280.1 276.6 L276.4 276.8 L272.9 276.9 L269.5 276.8 L266.3 276.6 L263.4 276.2 L260.8 275.7 L258.5 275.2 L256.6 274.5 L255.1 273.8 L254.0 273.0 L253.3 272.2 L253.0 271.5 L253.1 270.7 L253.6 269.9 L254.5 269.3 L255.7 268.6 L257.2 268.1 L259.0 267.7 L261.0 267.3 L263.3 267.1 L265.7 267.0 L268.2 267.0 L270.7 267.1 L273.3 267.4 L275.8 267.8 L278.3 268.3 L280.7 268.9 L282.9 269.6 L285.0 270.4 L286.8 271.3 L288.4 272.3 L289.8 273.3 L290.9 274.4 L291.7 275.5 L292.2 276.6 L292.5 277.8 L292.5 278.9 L292.2 280.0 L291.7 281.1 L291.0 282.1 L290.1 283.1 L289.0 284.1 L287.7 284.9 L286.3 285.7 L284.9 286.5 L283.3 287.1 L281.7 287.7 L280.2 288.2 L278.6 288.6 L277.1 289.0 L275.7 289.3 L274.4 289.5 L273.1 289.7 L272.0 289.8 L271.1 289.9 L270.3 290.0 L269.7 290.0 L269.2 290.1 L268.9 290.1 L268.8 290.1 L268.8 290.2 L268.9 290.2 L269.2 290.3 L269.6 290.4 L270.1 290.6 L270.7 290.8 L271.3 291.0 L272.0 291.3 L272.8 291.6 L273.6 292.0 L274.3 292.4 L275.1 292.8 L275.8 293.3 L276.5 293.8 L277.2 294.4 L277.8 294.9 L278.3 295.5 L278.8 296.1 L279.2 296.8 L279.5 297.4 L279.7 298.1 L279.9 298.7 L280.0 299.4 L280.1 300.1 L280.1 300.7 L280.1 301.4 L280.0 302.0 L278.0 312.0"/>
+        <path class="drips" d="M278 318L277 430"/>
+        <g class="steam"><path d="M252 425c-8-10 8-16 0-28s6-16 2-22"/><path d="M318 425c-8-10 8-16 0-28s6-16 2-22"/></g>
+        <path class="spark" style="animation-delay:-.4s" d="M150 250l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+        <path class="spark" style="animation-delay:-1.3s" d="M418 230l2.5 6 6 2.5-6 2.5-2.5 6-2.5-6-6-2.5 6-2.5z"/>
+        <path class="spark" style="animation-delay:-2s" d="M405 395l2.5 6 6 2.5-6 2.5-2.5 6-2.5-6-6-2.5 6-2.5z"/>
+        <path class="spark" style="animation-delay:-.9s" d="M180 380l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/>
+      </svg>
+    </div>
+  <div class="side">
+    <p class="hand">great coffee. Wherever. Whenever.</p>
+    <div class="postcard" aria-label="Tardi coffee, anywhere and anytime">
+      <svg class="defs" width="0" height="0" aria-hidden="true"><filter id="hand" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+      <!-- 1. summit / camping -->
+      <div class="scene" style="--k:0;--cx:75%;--cy:56%">
+        <svg viewBox="0 0 400 300" aria-hidden="true">
+          <circle class="sf" cx="250" cy="120" r="20"/><path class="sk" d="M250 88v-10M222 100l-8-6M278 100l8-6M214 124h-10M286 124h10"/>
+          <path class="sf" d="M-10 226V212L80 110l40 42 70-94 60 72 40-34 120 116v14z"/>
+          <path class="sk" d="M176 77l14-19 14 17-7-3-7 7-7-6z"/><path class="sk" d="M190 58V34l17 6-17 7"/>
+          <path class="sk" d="M0 222h400"/>
+          <path class="sf" d="M26 222l44-62 44 62z"/><path class="sk" d="M58 222l12-24 12 24"/>
+          <path class="sk" d="M144 222l28-9M144 213l28 9"/><path class="fl" d="M158 211c-9-8-3-16 1-26 6 9 12 17-1 26z"/>
+          <path class="sf" d="M258 222c4-20 68-24 80 0z"/>
+        </svg>
+        <img class="mini" src="assets/logo/cup-mini-space.png" alt="">
+        <p class="cap"><b>05:50</b><span>Summit · Camp espresso</span></p>
+      </div>
+      <!-- 2. kitchen -->
+      <div class="scene" style="--k:1;--cx:22%;--cy:54%">
+        <svg viewBox="0 0 400 300" aria-hidden="true">
+          <rect class="sf" x="214" y="38" width="150" height="112" rx="6"/>
+          <circle class="sf" cx="250" cy="72" r="13"/><path class="sk" d="M250 52v-6M230 72h-6M270 72h6M236 58l-4-4M264 58l4-4"/>
+          <path class="sk" d="M289 38v112M214 96h150"/>
+          <path class="sf" d="M150 200v-28c0-16 42-16 42 0v28z"/><path class="sk" d="M150 176c-13 0-13 17 0 17M192 184l13-11M171 156v-6"/>
+          <path class="sf" d="M325 166c-4-18-20-22-22-40 14 2 22 14 22 40zM325 166c2-22 16-30 30-30-2 16-16 22-30 30z"/>
+          <path class="sf" d="M305 200l6-34h28l6 34z"/>
+          <path class="sk" d="M0 200h400M120 204v46M260 204v46"/>
+        </svg>
+        <img class="mini" src="assets/logo/cup-mini-space.png" alt="">
+        <p class="cap"><b>06:45</b><span>Kitchen bench · Flat white</span></p>
+      </div>
+      <!-- 3. mum on the go -->
+      <div class="scene" style="--k:2;--cx:75%;--cy:32%;--w:17%">
+        <svg viewBox="0 0 400 300" aria-hidden="true">
+          <path class="sk" d="M40 228V130"/><ellipse class="sf" cx="40" cy="104" rx="28" ry="36"/><path class="sk" d="M40 92v26M40 106l10-8"/>
+          <path class="sk" d="M0 228h400"/>
+          <g transform="translate(-40,0)"><path class="sk" d="M238 126l20-68h24"/>
+          <path class="sf" d="M108 126h132a60 60 0 0 1-60 60h-32a40 40 0 0 1-40-60z"/>
+          <path class="sf" d="M108 126a66 66 0 0 1 72-62v62z"/><path class="sk" d="M128 126a46 46 0 0 1 30-44M150 126a26 26 0 0 1 16-24"/>
+          <path class="sk" d="M148 186l-8 10M200 186l8 10"/>
+          <circle class="sf" cx="136" cy="206" r="17"/><circle class="sf" cx="214" cy="206" r="17"/><circle class="fill" cx="136" cy="206" r="3"/><circle class="fill" cx="214" cy="206" r="3"/></g>
+          <path class="sk" d="M352 140l-20 88M352 140l22 88M352 72v68M352 94l-108-34M352 94l-50 4"/>
+          <path class="sf" d="M338 222l-12 6h14zM370 222l12 6h-14z"/>
+          <path class="sk" d="M340 52c-12 4-14 16-6 24"/><circle class="sf" cx="352" cy="58" r="14"/>
+        </svg>
+        <svg class="mini drink" viewBox="0 0 100 130" aria-hidden="true">
+          <path class="sf" d="M28 30h44l-6 92H34z"/><path class="cr" d="M30 58h40l-2 28H32z"/><path class="sk" d="M30 58h40M32 86h36"/>
+          <path class="sf" d="M24 18h52v12H24z"/><path class="sf" d="M34 18l4-10h24l4 10z"/>
+        </svg>
+        <p class="cap"><b>08:40</b><span>School run · Keep-cup latte</span></p>
+      </div>
+      <!-- 4. office -->
+      <div class="scene" style="--k:3;--cx:63%;--cy:54%">
+        <svg viewBox="0 0 400 300" aria-hidden="true">
+          <rect class="sf" x="250" y="40" width="34" height="34" transform="rotate(-6 267 57)"/><path class="sk" d="M256 52h18M256 62h12"/>
+          <rect class="sf" x="58" y="102" width="124" height="88" rx="7"/><path class="sk" d="M80 130h64M80 148h44M80 166h54"/>
+          <path class="sf" d="M44 190h152l12 10H32z"/>
+          <path class="sk" d="M356 192l-22-70 38-30"/><path class="sf" d="M372 86l24 10-12 22z"/><path class="sf" d="M340 200v-8h32v8z"/>
+          <path class="sk" d="M0 200h400M40 204v56M360 204v56"/>
+        </svg>
+        <img class="mini" src="assets/logo/cup-mini-space.png" alt="">
+        <p class="cap"><b>10:30</b><span>Your desk · Long black</span></p>
+      </div>
+      <!-- 5. beach / iced latte -->
+      <div class="scene" style="--k:4;--cx:20%;--cy:52%;--w:20%">
+        <svg viewBox="0 0 400 300" aria-hidden="true">
+          <circle class="sf" cx="340" cy="56" r="22"/><path class="sk" d="M340 20v-10M340 102v-8M304 56h-10M386 56h-8M314 30l-7-7M366 30l7-7M314 82l-7 7M366 82l7 7"/>
+          <path class="sk" d="M0 150h400M20 168c20-8 40 8 60 0s40 8 60 0M210 172c20-8 40 8 60 0s40 8 60 0"/>
+          <path class="sk" d="M250 112l-28 112"/>
+          <path class="sf" d="M170 112a80 52 0 0 1 160 0z"/><path class="sk" d="M196 112c10-26 26-42 54-52 28 10 44 26 54 52M232 112c4-26 10-42 18-52 8 10 14 26 18 52M250 60v-8"/>
+          <path class="sf" d="M262 222l70-16 46 10-70 16z"/><path class="sk" d="M282 218l70-16"/>
+          <path class="sk" d="M0 222h400"/>
+        </svg>
+        <svg class="mini drink" viewBox="0 0 100 130" aria-hidden="true">
+          <path class="sk" d="M64 2l-9 50"/>
+          <path class="sf" d="M24 20h52l-8 104H32z"/><path class="cr" d="M28 38h44l-2 26H30z"/><path class="sk" d="M28 38c10 6 22-6 44 0"/>
+          <rect class="sf" x="34" y="68" width="14" height="14" rx="3" transform="rotate(-12 41 75)"/><rect class="sf" x="52" y="76" width="14" height="14" rx="3" transform="rotate(10 59 83)"/><rect class="sf" x="40" y="94" width="14" height="14" rx="3"/>
+        </svg>
+        <p class="cap"><b>13:00</b><span>Henley Beach · Iced latte</span></p>
+      </div>
+      <!-- 6. workshop -->
+      <div class="scene" style="--k:5;--cx:81%;--cy:51%">
+        <svg viewBox="0 0 400 300" aria-hidden="true">
+          <path class="sk" d="M92 140l-20 50M160 140l20 50M126 140v44"/>
+          <rect class="sf" x="40" y="30" width="172" height="112" rx="5"/><path class="sk" d="M66 122v-30M96 122v-48M126 122v-20M156 122v-66M186 122v-40M58 122h140"/>
+          <path class="sf" d="M46 222c0-22 48-22 48 0z"/><circle class="sf" cx="70" cy="184" r="13"/>
+          <path class="sf" d="M116 222c0-22 48-22 48 0z"/><circle class="sf" cx="140" cy="184" r="13"/>
+          <path class="sf" d="M186 222c0-22 48-22 48 0z"/><circle class="sf" cx="210" cy="184" r="13"/>
+          <path class="sk" d="M280 196v34M384 196v34"/><rect class="sf" x="264" y="190" width="132" height="8" rx="3"/>
+          <path class="sk" d="M0 228h400"/>
+        </svg>
+        <img class="mini" src="assets/logo/cup-mini-space.png" alt="">
+        <p class="cap"><b>15:15</b><span>Workshop break · Batch brew</span></p>
+      </div>
+      <!-- 7. chef's table / affogato -->
+      <div class="scene" style="--k:6;--cx:50%;--cy:47%;--w:30%">
+        <svg viewBox="0 0 400 300" aria-hidden="true">
+          <path class="sk" d="M200 0v24M200 24c-30 0-52 12-52 26M200 24c30 0 52 12 52 26M200 24v26M174 28l-8 22M226 28l8 22"/>
+          <path class="fl" d="M148 50c-4 6 0 10 0 10 0 0 4-4 0-10zM252 50c-4 6 0 10 0 10 0 0 4-4 0-10zM200 50c-4 6 0 10 0 10 0 0 4-4 0-10zM166 50c-4 6 0 10 0 10 0 0 4-4 0-10zM234 50c-4 6 0 10 0 10 0 0 4-4 0-10z"/>
+          <path class="sf" d="M20 205h360l18 40H2z"/><path class="sk" d="M60 210c10 14 20 22 30 35M340 210c-10 14-20 22-30 35"/>
+          <rect class="sf" x="64" y="148" width="12" height="57" rx="3"/><path class="fl" d="M70 146c-8-8-2-16 0-24 3 8 9 16 0 24z"/>
+          <rect class="sf" x="324" y="148" width="12" height="57" rx="3"/><path class="fl" d="M330 146c-8-8-2-16 0-24 3 8 9 16 0 24z"/>
+          <ellipse class="sf" cx="128" cy="204" rx="26" ry="6"/><ellipse class="sf" cx="272" cy="204" rx="26" ry="6"/>
+        </svg>
+        <svg class="mini drink" viewBox="0 0 100 130" aria-hidden="true">
+          <path class="sk" d="M8 124h84"/>
+          <path class="sf" d="M34 118c0-6 32-6 32 0z"/><path class="sk" d="M50 106v12"/>
+          <path class="sf" d="M22 78h56c-2 20-14 30-28 30s-26-10-28-30z"/>
+          <circle class="sf" cx="50" cy="64" r="18"/><path class="sk" d="M38 58c4-6 10-8 16-6"/>
+          <path class="cr" d="M24 80h52c-3 12-12 20-26 20s-23-8-26-20z"/>
+          <path class="pour" d="M66 26c-6 12-10 18-12 28"/>
+          <path class="sf" d="M64 22l8-14c8 0 14 6 12 12l-12 8z"/>
+          <path class="sk" d="M80 112l12-20"/>
+        </svg>
+        <p class="cap"><b>20:15</b><span>Chef's table · Affogato</span></p>
+      </div>
+      <!-- 8. laneway bar / espresso martini -->
+      <div class="scene" style="--k:7;--cx:28%;--cy:52%;--w:27%">
+        <svg viewBox="0 0 400 300" aria-hidden="true">
+          <path class="sk" d="M206 62h176M206 122h176"/>
+          <path class="sf" d="M216 62V36h10v26zM240 62V22h8l3 8v32zM268 62V34c0-7 13-7 13 0v28zM300 62V26h10v36zM330 62V40h14v22zM356 62V30h9v32z"/>
+          <path class="sf" d="M216 122V98h12v24zM246 122V88h8v34zM272 122V96c0-7 13-7 13 0v26zM306 122V94h14v28zM340 122V84h8v38z"/>
+          <rect class="sf" x="28" y="38" width="136" height="58" rx="29"/>
+          <text x="96" y="76" text-anchor="middle" class="neon">open late</text>
+          <path class="sf" d="M300 205v-38h40v38z"/><path class="sf" d="M306 167l14-16 14 16z"/>
+          <rect class="sf" x="-4" y="205" width="408" height="30"/>
+        </svg>
+        <svg class="mini drink" viewBox="0 0 100 130" aria-hidden="true">
+          <path class="sf" d="M30 114c0-7 40-7 40 0z"/><path class="sk" d="M50 66v44"/>
+          <path class="sf" d="M8 26h84c-6 26-24 40-42 40S14 52 8 26z"/>
+          <path class="cr" d="M13 31h74c-7 13-21 20-37 20S20 44 13 31z"/>
+          <ellipse class="bean" cx="38" cy="36" rx="5" ry="3.4"/><ellipse class="bean" cx="50" cy="34" rx="5" ry="3.4"/><ellipse class="bean" cx="62" cy="36" rx="5" ry="3.4"/>
+        </svg>
+        <p class="cap"><b>22:30</b><span>Laneway bar · Espresso martini</span></p>
+      </div>
+      <!-- 9. orbit -->
+      <div class="scene orbit" style="--k:8;--cx:50%;--cy:38%">
+        <svg viewBox="0 0 400 300" aria-hidden="true">
+          <circle class="fill" cx="40" cy="40" r="2.5"/><circle class="fill" cx="120" cy="80" r="2"/><circle class="fill" cx="350" cy="44" r="2.5"/><circle class="fill" cx="300" cy="150" r="2"/><circle class="fill" cx="70" cy="150" r="2"/><circle class="fill" cx="240" cy="26" r="2"/>
+          <path class="fill" d="M90 100l2 5 5 2-5 2-2 5-2-5-5-2 5-2zM360 120l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/>
+          <path class="sf" d="M-40 310C60 160 340 160 440 310z"/><path class="sk" d="M70 232c24-8 50-10 70-2 10 6-6 14 10 18M240 222c30-4 54 2 70 12"/>
+          <g transform="rotate(-25 318 98)"><path class="sk" d="M306 98h-30M330 98h30"/><rect class="sf" x="306" y="84" width="24" height="28" rx="4"/><rect class="sf" x="256" y="90" width="20" height="16"/><rect class="sf" x="360" y="90" width="20" height="16"/><path class="sk" d="M318 84v-10"/></g>
+        </svg>
+        <img class="mini" src="assets/logo/cup-mini-space.png" alt="">
+        <p class="cap"><b>23:59</b><span>Low Earth orbit · Espresso</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  // ?noscenes — logo + tagline only (handy for screens and recording)
+  const q = new URLSearchParams(location.search);
+  if (q.has("noscenes")) document.body.classList.add("noscenes");
+  let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const box = document.querySelector(".sky .stars");
+  for (let i = 0; i < 170; i++) {
+    const s = document.createElement("i"); s.className = "star";
+    s.style.cssText = `left:${rnd()*100}%;top:${rnd()*100}%;--s:${(rnd()*2.4+.8).toFixed(1)}px;--d:${[2,3,6][i%3]}s;--o:-${(rnd()*6).toFixed(2)}s;opacity:${(.4+rnd()*.6).toFixed(2)}`;
+    box.appendChild(s);
+  }
+</script>
+</body>
+</html>
