@@ -1,0 +1,103 @@
+/* ==========================================================
+   Tardi logo animation — "great coffee. wherever. whenever."
+   Pure CSS so it loops seamlessly: 6s brew · 54s scenes & sky
+   ========================================================== */
+.tardi-anim{position:relative;width:100%;aspect-ratio:500/680;--brew:6s}
+.tardi-anim .l{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;user-select:none;filter:var(--logo-filter)}
+/* solid backing so the sky passes *behind* the logo, never through it */
+.tardi-anim::before{content:"";position:absolute;inset:-6% -10%;background:radial-gradient(closest-side,var(--bg) 62%,transparent);pointer-events:none}
+.tardi-anim .l.fill{filter:none}
+.tardi-anim .fx{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+
+/* portafilter: a little tamp at the top of each brew */
+.tardi-anim .porta,.tardi-anim .drip{transform-origin:63% 15%;animation:t-porta var(--brew) ease-in-out infinite}
+@keyframes t-porta{0%,14%,100%{transform:none}4%{transform:translateY(1.2%) rotate(-1.5deg)}9%{transform:translateY(-.4%) rotate(.6deg)}}
+
+/* wormhole: lazy swirl + a gulp as the stream reaches the throat */
+.tardi-anim .worm{transform-origin:55.4% 45%;animation:t-swirl 3s ease-in-out infinite,t-gulp var(--brew) ease-in-out infinite}
+@keyframes t-swirl{0%,100%{rotate:-2deg}50%{rotate:2deg}}
+@keyframes t-gulp{0%,40%,62%,100%{scale:1 1}48%{scale:1.07 .93}55%{scale:.96 1.05}}
+
+/* space bits */
+.tardi-anim .space{animation:t-twinkle 2s ease-in-out infinite}
+@keyframes t-twinkle{0%,100%{opacity:1}50%{opacity:.45}}
+.tardi-anim .saturn{animation:t-orbit var(--brew) linear infinite}
+@keyframes t-orbit{0%{translate:0 0;rotate:0deg}25%{translate:1.4% -1%}50%{translate:0 -2%;rotate:-6deg}75%{translate:-1.4% -1%}100%{translate:0 0;rotate:0deg}}
+.tardi-anim .moon{transform-origin:75.6% 46.5%;animation:t-bob 3s ease-in-out infinite}
+@keyframes t-bob{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -1.4%;rotate:25deg}}
+
+/* the coffee stream: falls from the spout, circles tighter and tighter into the wormhole */
+.tardi-anim .stream,.tardi-anim .ghost,.tardi-anim .drips{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.tardi-anim .ghost{stroke:var(--crema);stroke-width:1.5;opacity:0;stroke-dasharray:2 7;animation:t-ghost var(--brew) linear infinite}
+@keyframes t-ghost{0%,10%{opacity:0}22%,50%{opacity:.35}60%,100%{opacity:0}}
+.tardi-anim .stream{stroke:var(--crema);stroke-width:5;stroke-dasharray:200 1300;stroke-dashoffset:200;filter:drop-shadow(0 0 4px var(--crema));animation:t-stream var(--brew) cubic-bezier(.45,.05,.75,.6) infinite}
+.tardi-anim .stream.s2{stroke-width:2.5;stroke-dasharray:60 1200;animation-delay:.12s;opacity:.6}
+@keyframes t-stream{0%,9%{stroke-dashoffset:200}52%,100%{stroke-dashoffset:-1000}}
+/* …then drips out of the bottom, down the arrow, into the cup */
+.tardi-anim .drips{stroke:var(--crema);stroke-width:6;stroke-dasharray:.1 22;opacity:0;filter:drop-shadow(0 0 3px var(--crema));animation:t-drips var(--brew) linear infinite}
+@keyframes t-drips{0%,46%{opacity:0;stroke-dashoffset:0}50%{opacity:1}62%{opacity:1}66%,100%{opacity:0;stroke-dashoffset:-132}}
+
+/* cup catches it */
+.tardi-anim .cup{transform-origin:56% 76%;animation:t-catch var(--brew) ease-out infinite}
+@keyframes t-catch{0%,58%,100%{transform:none}61%{transform:translateY(1.2%) scale(1.04,.95)}66%{transform:translateY(-.8%) scale(.98,1.03)}72%{transform:none}}
+.tardi-anim .rays{transform-origin:56% 74%;animation:t-rays var(--brew) ease-out infinite}
+@keyframes t-rays{0%,58%{opacity:.25;transform:scale(.85)}66%{opacity:1;transform:scale(1.12)}82%{opacity:1;transform:scale(1)}100%{opacity:.25;transform:scale(.85)}}
+.tardi-anim .steam path{fill:none;stroke:var(--ink);stroke-width:4;stroke-linecap:round;stroke-dasharray:60;stroke-dashoffset:60;opacity:0;animation:t-steam var(--brew) ease-out infinite}
+.tardi-anim .steam path:nth-child(2){animation-delay:.25s}
+@keyframes t-steam{0%,64%{stroke-dashoffset:60;opacity:0;transform:translateY(0)}74%{opacity:.9}92%{stroke-dashoffset:0;opacity:0;transform:translateY(-14px)}100%{opacity:0}}
+.tardi-anim .spark{fill:var(--ink);transform-box:fill-box;transform-origin:center;animation:t-spark 2.4s ease-in-out infinite}
+@keyframes t-spark{0%,100%{transform:scale(.2);opacity:0}50%{transform:scale(1);opacity:1}}
+
+/* ---------- anywhere / anytime postcards (54s, 9 scenes) ---------- */
+.postcard{position:relative;aspect-ratio:4/3;border:3px solid var(--ink);border-radius:22px;overflow:hidden;background:var(--paper);color:var(--ink)}
+.scene{position:absolute;inset:0;opacity:0;clip-path:circle(0% at 50% 55%);animation:t-scene 54s linear infinite;animation-delay:calc(var(--k)*6s + 3.6s - 54s)}
+.scene svg{position:absolute;inset:0;width:100%;height:100%}
+.scene svg *{vector-effect:non-scaling-stroke}
+.postcard .defs{position:absolute;width:0;height:0}
+.scene>svg,.scene .drink{filter:url(#hand)}
+.scene .sf{fill:var(--paper);stroke:currentColor;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.scene .fl{fill:var(--crema);stroke:currentColor;stroke-width:2;stroke-linejoin:round}
+.scene .sk{fill:none;stroke:currentColor;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.scene .fill{fill:currentColor}
+.scene .mini{position:absolute;width:24%;left:var(--cx,50%);top:var(--cy,52%);translate:-50% -50%;animation:t-mini 54s linear infinite;animation-delay:inherit}
+.scene .drink{width:var(--w,19%);overflow:visible}
+.scene .drink .cr{fill:var(--crema);opacity:.9}
+.scene .drink .bean{fill:var(--bg);stroke:var(--ink);stroke-width:2}
+.scene .drink .pour{fill:none;stroke:var(--crema);stroke-width:4;stroke-linecap:round;stroke-dasharray:4 6;animation:t-pour .6s linear infinite}
+@keyframes t-pour{to{stroke-dashoffset:-20}}
+.scene .neon{font-family:var(--hand);font-size:34px;fill:var(--red);filter:drop-shadow(0 0 6px var(--red))}
+.orbit .mini{rotate:-14deg}
+.scene .cap{margin:0;position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:baseline;padding:.55em .9em;font-family:var(--display);font-size:clamp(1rem,2.2vw,1.45rem);letter-spacing:.06em;border-top:3px solid var(--ink);background:var(--paper)}
+.scene .cap b{font-weight:400;color:var(--red)}
+.scene .cap span{white-space:nowrap;font-size:.86em;margin-left:.6em}
+@keyframes t-scene{0%{opacity:1;clip-path:circle(0% at 50% 55%)}1.7%{clip-path:circle(80% at 50% 55%)}10.85%{opacity:1;clip-path:circle(80% at 50% 55%)}11.11%{opacity:0}100%{opacity:0;clip-path:circle(0% at 50% 55%)}}
+@keyframes t-mini{0%,.7%{transform:translateY(-60px) scale(.4) rotate(-20deg);opacity:0}1.95%{transform:translateY(4px) scale(1.05,.95);opacity:1}2.5%{transform:none}10.6%{transform:none;opacity:1}11.11%,100%{opacity:0}}
+
+/* ---------- the sky: shooting stars, a UFO, a rocket, a drifting cup ---------- */
+.sky{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.sky .star{position:absolute;width:var(--s);height:var(--s);border-radius:50%;background:var(--ink);animation:t-twinkle var(--d) ease-in-out infinite;animation-delay:var(--o)}
+.sky svg{overflow:visible}
+.shoot{position:absolute;width:150px;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,var(--ink));rotate:150deg;transform-origin:100% 50%;opacity:0;animation:t-shoot var(--d) linear infinite;animation-delay:var(--o)}
+.shoot::after{content:"";position:absolute;right:-2px;top:-2px;width:6px;height:6px;border-radius:50%;background:var(--ink);box-shadow:0 0 10px 3px var(--ink)}
+@keyframes t-shoot{0%{translate:0 0;opacity:0}1%{opacity:1}7%{translate:-460px 265px;opacity:0}100%{translate:-460px 265px;opacity:0}}
+.ufo{position:absolute;left:0;top:16%;width:96px;translate:-140px 0;animation:t-ufo 54s linear infinite}
+.ufo svg{width:100%;animation:t-wobble 1.6s ease-in-out infinite}
+.ufo .beam{fill:var(--crema);opacity:0;animation:t-beam 54s linear infinite}
+.ufo .lights circle{fill:var(--crema);animation:t-twinkle .6s steps(2) infinite}
+.ufo .lights circle:nth-child(2){animation-delay:-.2s}.ufo .lights circle:nth-child(3){animation-delay:-.4s}
+@keyframes t-ufo{0%{translate:-140px 0}9%{translate:calc(62vw - 48px) 4vh}10%{translate:calc(64vw - 48px) 3vh}15%{translate:calc(65vw - 48px) 4vh}18%{translate:calc(100vw + 160px) -14vh}100%{translate:calc(100vw + 160px) -14vh}}
+@keyframes t-beam{0%,9.5%{opacity:0}10.5%,14.5%{opacity:.35}15.5%,100%{opacity:0}}
+@keyframes t-wobble{0%,100%{transform:rotate(-5deg) translateY(0)}50%{transform:rotate(4deg) translateY(-5px)}}
+.rocket{position:absolute;left:0;top:0;width:44px;translate:-80px 105vh;rotate:45deg;animation:t-rocket 54s linear infinite}
+.rocket .flame{fill:var(--crema);transform-origin:50% 0;animation:t-flame .15s ease-in-out infinite alternate}
+@keyframes t-rocket{0%,40%{translate:-80px 105vh}52%{translate:calc(100vw + 80px) 20vh}100%{translate:calc(100vw + 80px) 20vh}}
+@keyframes t-flame{to{transform:scaleY(1.5)}}
+.drifter{position:absolute;right:0;top:62%;width:58px;translate:120px 0;animation:t-drift 54s linear infinite}
+@keyframes t-drift{0%,62%{translate:120px 0;rotate:0deg}96%,100%{translate:calc(-100vw - 60px) -22vh;rotate:-300deg}}
+
+@media (prefers-reduced-motion:reduce){
+  .tardi-anim *,.scene,.scene *,.sky *{animation:none!important}
+  .scene:first-child{opacity:1;clip-path:none}
+  .scene:first-child .mini{opacity:1}
+  .shoot,.ufo,.rocket,.drifter,.tardi-anim .stream,.tardi-anim .drips{display:none}
+}
